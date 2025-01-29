@@ -1,0 +1,75 @@
+.info {
+  color: $blue-500;
+  font-weight: 500;
+  text-align: center;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    @include before-element;
+    align-items: center;
+    font-family: $primary-font;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+  }
+
+  &__cards {
+    justify-content: center;
+    display: flex;
+
+    span {
+      background: url("#{$icon-path}/ring-chain.svg") no-repeat center / contain;
+      display: inline-block;
+      margin: auto 0.25rem;
+      height: 1rem;
+      width: 2.75rem;
+    }
+  }
+
+  &__card {
+    border-radius: 1.25rem;
+    flex: 1;
+    padding: 2rem 1.25rem;
+    text-wrap: balance;
+
+    strong {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+}
+
+@mixin info-xl {
+  .info {
+    &__cards {
+      flex-direction: column;
+      span {
+        margin: 0.75rem auto;
+        height: 3rem;
+        width: 3rem;
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

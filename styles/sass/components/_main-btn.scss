@@ -1,0 +1,53 @@
+.main-btn {
+  animation: jittery 4s infinite;
+  background: $light-green-200;
+  border-radius: 9999px;
+  box-shadow: 0 4px 4px rgba($black, 0.25);
+  color: $white;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: {
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 1.5rem;
+  }
+  text-align: center;
+  text-wrap: balance;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+
+  @include respond-to("sm") {
+    font-size: 1.125rem;
+    max-width: 24rem;
+
+  }
+}
+
+@keyframes jittery {
+  5%,
+  50% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.05);
+  }
+  20% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+  25% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  30% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+  35% {
+    transform: scale(1.05) rotate(1deg);
+  }
+  40% {
+    transform: scale(1.05) rotate(0);
+  }
+}

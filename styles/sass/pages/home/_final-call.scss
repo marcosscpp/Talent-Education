@@ -1,0 +1,97 @@
+.final-call {
+  background: $gray-100;
+  text-align: center;
+
+  &__container {
+    max-width: 85rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  &__subtitle {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    gap: 0.5rem;
+
+    &::before {
+      background: url("#{$icon-path}/star.svg") no-repeat center / contain;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  font-size: 0.9375rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+
+  &__item + &__item {
+    margin-left: -5rem;
+  }
+
+  &__item {
+    align-items: center;
+    clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 5rem;
+    padding-right: 4rem;
+
+    &--darkblue {
+      background: $blue-500;
+      color: $white;
+    }
+
+    &--lightblue {
+      background: $blue-200;
+      color: $white;
+      font-weight: 400;
+      flex-basis: 15%;
+    }
+
+    &--greenish {
+      background: $greenish-300;
+      color: $blue-500;
+      font-weight: 500;
+    }
+
+    p + p {
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+@mixin final-call-xl {
+  .breadcrumb {
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.125rem;
+
+    &__item {
+      clip-path: polygon(50% 20%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0% 0%);
+      max-width: 32rem;
+      padding: 8rem 2rem;
+    }
+
+    &__item + &__item {
+      margin-left: 0;
+      margin-top: -8rem;
+    }
+  }
+}

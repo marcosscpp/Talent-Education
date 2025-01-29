@@ -1,0 +1,41 @@
+@mixin respond-to($breakpointMax, $breakpointMin: null) {
+  @if $breakpointMin {
+    @media (min-width: map-get($breakpoints, $breakpointMin)) and (max-width: map-get($breakpoints, $breakpointMax)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: map-get($breakpoints, $breakpointMax)) {
+      @content;
+    }
+  }
+}
+
+@mixin before-element {
+  display: flex;
+  flex-wrap: wrap;
+
+  &::before {
+    border-radius: 50%;
+    border: 0.625rem solid $blue-200;
+    content: "";
+    flex-shrink: 0;
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+@mixin before-list-element {
+  position: relative;
+
+  &::before {
+    $donut-diameter: 1.25rem;
+    border-radius: 50%;
+    border: $donut-diameter / 3.5 solid $greenish-300;
+    content: "";
+    height: $donut-diameter;
+    left: -$donut-diameter - 0.5rem;
+    top: 0.25rem;
+    position: absolute;
+    width: $donut-diameter;
+  }
+}

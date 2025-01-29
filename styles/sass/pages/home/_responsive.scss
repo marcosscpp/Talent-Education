@@ -1,0 +1,15 @@
+@include respond-to("xl") {
+  @include about-xl;
+  @include info-xl;
+  @include final-call-xl;
+}
+
+@include respond-to("md") {
+  @include modules-md;
+  @include bonus-md;
+  @include audience-md;
+}
+
+@include respond-to("sm") {
+  @include about-sm;
+}

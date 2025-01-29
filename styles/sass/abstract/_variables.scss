@@ -1,0 +1,21 @@
+// Fonts
+$primary-font: "Ubuntu", sans-serif;
+$secondary-font: "Instrument Sans", sans-serif;
+
+// Colors
+$black: #000000;
+$gray-100: #EBEBEB;
+$white: #ffffff;
+
+$blue-200: #3399ff;
+$blue-500: #114488;
+$blue-700: #112244;
+
+$light-green-200: #5dbb2f;
+$greenish-300: #47bca9;
+
+// Folders Path
+$base-path: "../assets";
+$image-path: "#{$base-path}/images";
+$font-path: "#{$base-path}/fonts";
+$icon-path: "#{$base-path}/icons";

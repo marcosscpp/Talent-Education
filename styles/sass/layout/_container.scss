@@ -1,0 +1,9 @@
+.container {
+  margin: 0 auto;
+  padding: 2.5rem;
+
+  @include respond-to("md") {
+    padding: 3rem 1.5rem;
+    width: 100%;
+  }
+}

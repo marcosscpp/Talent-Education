@@ -1,0 +1,22 @@
+.blue-bg {
+  background-color: $blue-500;
+  color: $white;
+  strong {
+    color: $blue-200;
+  }
+}
+
+.gray-bg {
+  background-color: $gray-100;
+}
+
+.ring {
+  border: 0.875rem solid $blue-200;
+  border-radius: 50%;
+  margin: {
+    bottom: auto;
+    top: auto;
+  }
+  height: 3rem;
+  width: 3rem;
+}

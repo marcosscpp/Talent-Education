@@ -1,0 +1,107 @@
+.modules {
+  padding: 1.25rem 0;
+
+  &__container {
+    max-width: 65rem;
+  }
+
+  &__header {
+    color: $blue-500;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 1.25rem;
+    text-wrap: balance;
+  }
+
+  &__subtitle {
+    @include before-element;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+}
+
+.module {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    background-color: $blue-200;
+    border-radius: 1rem 1rem 0 0;
+    color: $white;
+    display: block;
+    margin: 0 auto;
+    max-width: 40rem;
+    text-transform: uppercase;
+    font-size: 1.375rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+  }
+
+  &__content {
+    background: $blue-500;
+    border-radius: 1rem;
+    color: $white;
+    font-family: $primary-font;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    padding: 2.5rem 6rem;
+
+    ul {
+      margin-top: 1.75rem;
+      padding-left: 1.625rem;
+      li + li {
+        margin-top: 1.25rem;
+      }
+      li {
+        @include before-list-element;
+      }
+    }
+  }
+
+  & + .module {
+    margin-top: 3rem;
+  }
+}
+
+@mixin modules-md {
+  .modules {
+    padding: 0;
+    &__container {
+      padding: {
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  .module {
+    &__content {
+      border-radius: 0;
+      padding: 2.5rem;
+
+      & > p {
+        text-align: center;
+      }
+    }
+
+    &__title {
+      font-size: 1.125rem;
+      text-align: center;
+      text-wrap: balance;
+      width: 90%;
+      strong {
+        display: block;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
