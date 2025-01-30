@@ -1,0 +1,104 @@
+.faq {
+  background: $gray-100;
+  font-family: $primary-font;
+  padding-bottom: 2rem;
+
+  &__container {
+    max-width: 65rem;
+    padding-top: 0
+  }
+
+  &__title {
+    @include before-element;
+    justify-content: center;
+    gap: 0.5rem;
+    color: $blue-500;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 0.125rem;
+    }
+
+    &:first-child .faq__question {
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+
+    &:last-child .faq__question {
+      border-radius: 0 0 1.25rem 1.25rem;
+    }
+  }
+
+  &__question {
+    background: $blue-500;
+    color: $white;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease, border-radius 0.5s ease;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $blue-700;
+    }
+
+    &::after {
+      content: "";
+      background: url("#{$icon-path}/arrow-down-light.svg") no-repeat center;
+      background-size: contain;
+      width: 2rem;
+      height: 2rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    &.open {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__answer {
+    background: $blue-200;
+    border-radius: 0 0 1.5rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $white;
+    max-height: 0;
+    padding: 0 2.5rem;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+
+    &.open {
+      max-height: 20rem;
+      padding: 1.25rem 2.5rem;
+    }
+  }
+}
+
+@mixin faq-sm {
+  .faq {
+    &__question {
+      font-size: 1.125rem;
+      gap: 1.25rem;
+    }
+
+    &__answer {
+      text-align: center;
+      padding: 0 1.25rem;
+      &.open {
+        padding: 1.25rem;
+      }
+    }
+  }
+}

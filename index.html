@@ -13,6 +13,7 @@
 
   <!-- Import Custom CSS + JS -->
   <link rel="stylesheet" href="./styles/style.css">
+  <script type="module" src="./scripts/script.js" defer></script>
   <!-- End Import Custom CSS + JS -->
 
   <title>Talent Education</title>
@@ -31,7 +32,7 @@
           <h2 class="hero__subheadline">Assista o curto vídeo abaixo e conheça <strong>o método prático</strong> que vai transformar suas vendas sem precisar viver na <strong>pressão de descontos</strong> ou enfrentar clientes que só buscam o <strong>“mais barato”</strong></h2>
         </header>
         <div class="hero__video">
-          <div id="vid_6720d64c32d028000b3a3ed8" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img id="thumb_6720d64c32d028000b3a3ed8" src="https://images.converteai.net/e2d39b57-8454-47b1-a4e0-1f4c0e6c30db/players/6720d64c32d028000b3a3ed8/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <div id="vid_6720d64c32d028000b3a3ed8" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img loading="lazy" alt="" id="thumb_6720d64c32d028000b3a3ed8" src="https://images.converteai.net/e2d39b57-8454-47b1-a4e0-1f4c0e6c30db/players/6720d64c32d028000b3a3ed8/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
             <div id="backdrop_6720d64c32d028000b3a3ed8" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div>
           </div>
           <script type="text/javascript" id="scr_6720d64c32d028000b3a3ed8"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/e2d39b57-8454-47b1-a4e0-1f4c0e6c30db/players/6720d64c32d028000b3a3ed8/player.js", s.async = !0, document.head.appendChild(s); </script>
@@ -79,7 +80,7 @@
         </p>
         <a href="http://" target="_blank" rel="noopener noreferrer" class="main-btn">Quero Ter Acesso ao Método</a>
       </div>
-      <div class="about__image"><img src="./assets/images/what-pleasure-looking-bank-account-full-money-delighted-handsome-successful-businessman-with-beard-neat-hairstyle-suit-holding-digital-tablet-smiling-pleased-looking-device.png" alt=""></div>
+      <div class="about__image"><img loading="lazy" src="./assets/images/what-pleasure-looking-bank-account-full-money-delighted-handsome-successful-businessman-with-beard-neat-hairstyle-suit-holding-digital-tablet-smiling-pleased-looking-device.png" alt=""></div>
     </section>
     <section class="info">
       <div class="info__container container">
@@ -211,24 +212,24 @@
             <header class="bonus__title">
               Além do conteúdo principal, você receberá <strong>2 bônus aceleradores</strong>
             </header>
-            <ul class="bonus__list">
-              <li class="bonus__item">
-                <img src="./assets/icons/tablet.svg" loading="lazy" alt="">
+            <div class="bonus__list">
+              <div class="bonus__item">
+                <img loading="lazy" src="./assets/icons/tablet.svg" loading="lazy" alt="">
                 <h1>E-book Prático</h1>
                 <p>
                   Com ferramentas e roteiros de vendas — um guia de bolso para aplicar todo o conteúdo do treinamento
                 </p>
-              </li>
+              </div>
               <span class="ring"></span>
-              <li class="bonus__item">
-                <img src="./assets/icons/graph.svg" loading="lazy" alt="">
+              <div class="bonus__item">
+                <img loading="lazy" src="./assets/icons/graph.svg" loading="lazy" alt="">
                 <h1>Sessão de Validação de Planos de Ação
                 </h1>
                 <p>
                   Um encontro individual para revisarmos seu plano de carreira para garantir que você aplique com segurança
                 </p>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <footer class="bonus__footer"><strong>Não é apenas teoria:</strong> cada bônus foi desenhado para te fazer <strong>ganhar tempo</strong> e <strong>mais vendas</strong> rapidamente</footer>
           <a href="http://" target="_blank" rel="noopener noreferrer" class="main-btn">Quero me inscrever e garantir meus bônus</a>
@@ -289,13 +290,61 @@
           </li>
         </ul>
         <a href="http://" target="_blank" rel="noopener noreferrer" class="main-btn">Quero Bater Metas e Fidelizar Clientes para Toda a Vida</a>
-
       </div>
     </section>
-    <section class="faq"></section>
+    <section class="faq">
+      <div class="faq__container container">
+        <h1 class="faq__title">FAQ - Perguntas Frequentes</h1>
+        <dl class="faq__list" data-faq>
+          <div class="faq__item">
+            <dt class="faq__question">Não tenho tempo para um curso de 30 horas.</dt>
+            <dd class="faq__answer">Você vai aprender métodos de gestão de tempo que liberam horas na sua rotina, além de aplicar cada técnica no dia a dia, sem perder produtividade.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">Esse valor está alto, não posso investir agora.</dt>
+            <dd class="faq__answer">Se apenas uma ou duas vendas adicionais pagam o curso, o retorno pode ser praticamente imediato. Além disso, as estratégias aprendidas vão durar a vida toda.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">Minha empresa deveria pagar, não eu.</dt>
+            <dd class="faq__answer">O conhecimento e as oportunidades ficam com você, independente da empresa. O ROI em comissões, reconhecimento e promoções tende a ser muito maior.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">Será que funciona para meu tipo de produto/serviço?</dt>
+            <dd class="faq__answer">O programa foca em princípios universais de vendas consultivas. Se você negocia com clientes, essas técnicas se aplicam.</dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <span>
+                <div>Minhas vendas dependem muito de preço;</div>
+                <div>não consigo vender sem dar desconto.</div>
+              </span>
+            </dt>
+            <dd class="faq__answer">Com as estratégias de valor, você aprenderá a mostrar benefícios e ROI ao cliente, reduzindo a pressão por desconto.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="footer__container container">
+
+      <div class="footer__logo">
+        <img src="./assets/images/talent-education-logo.svg" alt="Talent Eductaion">
+      </div>
+
+      <div class="footer__credits">
+        <strong>Feito por</strong>
+        <a href="https://atardigital.com.br/v2/" aria-label="Site da Atar Digital" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/images/atar-digital-logo.svg" alt="Atar Inteligência Digital">
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

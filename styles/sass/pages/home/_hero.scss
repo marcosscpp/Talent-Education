@@ -37,7 +37,8 @@
     margin: 0 auto;
   }
 
-  &__headline, &__subheadline {
+  &__headline,
+  &__subheadline {
     strong {
       color: $blue-700;
       font-weight: 700;
@@ -59,6 +60,18 @@
 
     em {
       font-weight: 700;
+    }
+  }
+}
+
+@mixin hero-sm {
+  .hero {
+    &__container {
+      padding-top: 1.25rem;
+    }
+
+    &__logo {
+      width: 8rem;
     }
   }
 }

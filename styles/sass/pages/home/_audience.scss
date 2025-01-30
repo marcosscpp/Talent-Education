@@ -79,6 +79,7 @@
 
 @mixin audience-md {
   .audience {
+    padding: 0;
     &__cards {
       flex-direction: column;
     }

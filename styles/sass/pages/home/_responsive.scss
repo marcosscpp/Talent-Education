@@ -11,5 +11,7 @@
 }
 
 @include respond-to("sm") {
+  @include hero-sm;
   @include about-sm;
+  @include faq-sm;
 }
