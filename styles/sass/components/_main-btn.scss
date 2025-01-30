@@ -1,9 +1,11 @@
 .main-btn {
   animation: jittery 4s infinite;
   background: $light-green-200;
+  border: 0;
   border-radius: 9999px;
   box-shadow: 0 4px 4px rgba($black, 0.25);
   color: $white;
+  cursor: pointer;
   display: inline-block;
   font-size: 1.25rem;
   font-weight: 500;
@@ -20,7 +22,6 @@
   @include respond-to("sm") {
     font-size: 1.125rem;
     max-width: 24rem;
-
   }
 }
 

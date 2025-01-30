@@ -6,12 +6,11 @@
   background-size: cover;
 
   &__container {
-    align-content: center;
     align-items: center;
     display: flex;
     gap: 3rem 10rem;
-    flex-wrap: wrap;
-    min-height: 25rem;
+    flex-direction: column;
+    min-height: 28rem;
     justify-content: center;
   }
 
@@ -28,9 +27,9 @@
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    font-weight: 200;
-    font-size: 0.875rem;
     flex-direction: column;
-    width: 10rem;
+    font-weight: 200;
+    font-size: 0.75rem;
+    width: 6rem;
   }
 }

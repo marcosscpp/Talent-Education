@@ -1,7 +1,6 @@
 export default class Faq {
   constructor(list) {
     this.accordionList = document.querySelectorAll(list);
-    console.log(this.accordionList)
     this.activeClass = 'open';
   }
 

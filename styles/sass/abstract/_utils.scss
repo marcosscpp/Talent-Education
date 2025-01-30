@@ -20,3 +20,39 @@
   height: 3rem;
   width: 3rem;
 }
+
+
+.loader-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  border-radius: inherit;
+  position: absolute;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+}
+
+
+.loader {
+  width: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, $white 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, $white);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}

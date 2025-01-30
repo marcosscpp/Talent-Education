@@ -83,7 +83,8 @@
   &__text {
     margin: 0 auto;
     max-width: 46rem;
-    font-size: 1.375rem;
+    padding: 0 1.25rem;
+    font-size: 1.25rem;
   }
 
   &__image {
@@ -122,6 +123,10 @@
       &-content {
         text-align: center;
       }
+    }
+
+    &__text {
+      font-size: 1.125rem;
     }
   }
 }
