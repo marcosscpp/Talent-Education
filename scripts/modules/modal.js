@@ -1,3 +1,5 @@
+import triggerEvent from "./triggerEvent";
+
 export default class Modal {
   constructor(openButton, closeButton, containerModal, activeClass = "active") {
     this.openButtons = document.querySelectorAll(openButton);
@@ -15,6 +17,7 @@ export default class Modal {
 
   eventToggleModal(event) {
     event.preventDefault();
+    triggerEvent("Abriu o Formulário");
     this.toggleModal();
   }
 

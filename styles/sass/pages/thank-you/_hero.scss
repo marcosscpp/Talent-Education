@@ -1,110 +1,202 @@
-.hero {
-  background: linear-gradient(180deg, $blue-500, $blue-200);
-  background-size: 200% 200%;
-  animation: gradientAnimation 6s ease infinite;
+@keyframes animate {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  25% {
+    transform: translateY(-25rem) translateX(2rem) scale(1.05);
+  }
+  50% {
+    transform: translateY(-50rem) translateX(-2rem) scale(0.95);
+  }
+  75% {
+    transform: translateY(-75rem) translateX(1rem) scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100rem) translateX(0) scale(1);
+  }
+}
 
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+$colors: rgba(188, 117, 229, 0.6), rgba(255, 104, 122, 0.6),
+  rgba(71, 188, 169, 0.6), rgba(129, 152, 199, 0.6);
+
+.background {
+  background: $blue-500;
+  height: 100vh;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+
+  li {
+    animation: animate 19s linear infinite;
+    border-radius: 50%;
+    display: block;
+    list-style: none;
+    position: absolute;
+  }
+}
+
+@media (min-width: 769px) {
+  @for $i from 0 through 15 {
+    .background li:nth-child(#{$i}) {
+      $size: (random(2) + 5) * 1rem;
+      $border-width: $size * 0.25;
+      $left-pos: (random(80) + 10) * 1%;
+      $bottom-offset: $i * 5rem;
+
+      animation-delay: (random(20) + 1) * 1s;
+      border: $border-width solid nth($colors, ($i % length($colors)) + 1);
+      bottom: -$size;
+      height: $size;
+      left: (random(90) + 5) * 1%;
+      width: $size;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @for $i from 0 through 10 {
+    .background li:nth-child(#{$i}) {
+      $size: (random(2) + 5) * 1rem;
+      $border-width: $size * 0.25;
+      $left-pos: (random(80) + 10) * 1%;
+      $bottom-offset: $i * 5vh;
+
+      animation-delay: (random(15) + 1) * 1s;
+      border: $border-width solid nth($colors, ($i % length($colors)) + 1);
+      bottom: -$size;
+      height: $size;
+      left: (random(90) + 5) * 1%;
+      width: $size;
+    }
+  }
+}
+
+.hero {
   &__container {
     align-items: center;
-    min-height: 100vh;
     display: flex;
+    gap: 2rem;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    width: 100vw;
+    z-index: 2;
   }
 
-  &__logo {
-    filter: invert(1) brightness(0) invert(1);
-    margin-bottom: auto;
-    width: 6rem;
-  }
-
-  &__header {
-    max-width: 42rem;
+  &__content {
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba($blue-200, 0.2);
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    max-height: 35rem;
+    max-width: 60rem;
+    padding: 1.5rem;
     text-align: center;
-    transform: translateY(-15%);
+    width: 100%;
+  }
+  
+  &__logo {
+    width: 3rem;
+  }
+
+  &__text {
+    font-family: $primary-font;
+    margin: 0 auto;
+    max-width: 42rem;
   }
 
   &__title {
     background: $white;
     color: $blue-500;
+    padding: .25rem;
+    line-height: 1.5;
     display: inline;
-    font-size: 2rem;
-    line-height: 1.75;
     text-transform: uppercase;
-    padding: 0.125rem;
   }
-
+  
   &__subtitle {
     color: $gray-100;
     font-size: 1.125rem;
-    font-family: $primary-font;
-    margin-top: 0.25rem;
-  }
-
-  &__quote {
-    margin-top: auto;
-    color: $white;
-    text-align: center;
-    max-width: 30rem;
-    display: none;
-
-    &.active {
-      animation: show-down 1.5s ease-in-out;
-      display: block;
-    }
-
-    &-text {
-      font-style: italic;
-      text-wrap: balance;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    &-author {
-      font-weight: 700;
-    }
+    font-weight: 300;
+    margin-top: 1rem;
   }
 
   &__btn {
     align-items: center;
     border-radius: 999px;
     justify-content: center;
-    padding: 0.75rem 2rem;
+    padding: .75rem 2rem;
     margin-top: 2rem;
-    background: linear-gradient(45deg, $greenish-300, $light-green-200);
+    background: linear-gradient(45deg, $blue-200, $light-green-200);
     color: $white;
     flex-wrap: wrap;
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-flex;
-    gap: 0.5rem;
-
+    gap: .5rem;
+    
     img {
-      width: 1.5rem;
+      width: 1.25rem;
+    }
+  }
+
+  @include respond-to("md") {
+    &__title {
+      line-height: 1.8;
+      text-wrap: balance;
+      font-size: 1.25rem;
+    }
+
+    &__content {
+      height: 100%;
+      max-height:none;
     }
   }
 }
 
-@keyframes show-down {
-  from {
-    opacity: 0;
-    transform: translateY(-1.5rem);
+.quote {
+  color: $gray-100;
+  
+  &.active {
+    animation: fadeDown .8s ease-out forwards;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  &__text {
+    font-style: italic;
+    font-weight: 500;
+    text-wrap: balance;
   }
-}
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  &__author {
+    color: $gray-200;
+    display: block;
+    margin-top: 0.25rem;
   }
 }

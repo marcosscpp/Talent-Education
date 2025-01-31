@@ -1,5 +1,9 @@
+import triggerEvent from "./modules/triggerEvent";
+
+triggerEvent("Pageview Obrigado");
+
 async function getRandomQuote() {
-  const response = await fetch("../assets/data/quotes.json");
+  const response = await fetch("./assets/quotes.json");
   const data = await response.json();
   const index = Math.floor(Math.random() * data.length);
   console.log(data[index])

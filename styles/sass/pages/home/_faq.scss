@@ -94,6 +94,10 @@
     &__question {
       font-size: 1.125rem;
       gap: 1.25rem;
+
+      div {
+        display: inline;
+      }
     }
 
     &__answer {
