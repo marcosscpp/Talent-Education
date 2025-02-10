@@ -9,7 +9,7 @@ import triggerEvent from "./modules/triggerEvent";
 triggerEvent("Pageview");
 
 Aos.init({
-  // once: true,
+  once: true,
 });
 
 const modal = new Modal(
