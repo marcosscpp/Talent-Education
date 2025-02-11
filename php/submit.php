@@ -13,9 +13,9 @@ function formatPhoneNumber($phone) {
         return null;
     }
 
-    $ddi = substr($phone, 0, 2);
-    $ddd = substr($phone, 2, 2);
-    $numeroSemDDD = substr($phone, 4);
+    $ddi = "55";
+    $ddd = substr($phone, 0, 2);
+    $numeroSemDDD = substr($phone, 2);
 
     return "+{$ddi} {$ddd} {$numeroSemDDD}";
 }

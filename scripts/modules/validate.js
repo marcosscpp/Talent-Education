@@ -23,7 +23,7 @@ export const validateCompleteName = (field, minNameQuantity, minLength) => {
 
 export const validatePhone = (field) => {
   const value = field.value.trim().replace(/\D/g, "");
-  const minLength = 12;
+  const minLength = 10;
 
   if (value.length < minLength) {
     field.setCustomValidity(`O campo de celular não tem dígitos suficientes.`);

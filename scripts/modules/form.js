@@ -127,25 +127,12 @@ export default class Form {
     this.formElement.querySelectorAll("[type='tel']").forEach((tel) => {
       tel.addEventListener("input", (e) => {
         let formattedNumber = e.target.value.replace(/\D/g, "");
+        if (formattedNumber.length > 11) {
+          formattedNumber = formattedNumber.slice(0, 11);
+        }
+        formattedNumber = formattedNumber.replace(/^(\d{2})(\d)/g, "($1) $2");
+        formattedNumber = formattedNumber.replace(/(\d)(\d{4})$/, "$1-$2");
 
-        if (formattedNumber.length > 13) {
-          formattedNumber = formattedNumber.slice(0, 13);
-        }
-        if (formattedNumber.length > 2) {
-          formattedNumber = formattedNumber.replace(/^(\d{2})(\d)/, "+$1 ($2");
-        }
-        if (formattedNumber.length > 4) {
-          formattedNumber = formattedNumber.replace(
-            /^(\+\d{2})\s\((\d{2})(\d)/,
-            "$1 ($2) $3"
-          );
-        }
-        if (formattedNumber.length > 8) {
-          formattedNumber = formattedNumber.replace(
-            /(\d{4,5})(\d{4})$/,
-            "$1-$2"
-          );
-        }
         e.target.value = formattedNumber;
       });
     });
