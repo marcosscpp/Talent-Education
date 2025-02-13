@@ -1,0 +1,53 @@
+.registration {
+  &__title {
+    color: $blue-700;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  &__content {
+    background: $gray-200;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__btn {
+    background: $blue-500;
+    color: $white;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-family: $primary-font;
+    transition: background 0.3s ease;
+    position: relative;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &:not(&:disabled):hover {
+      background: $blue-200;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

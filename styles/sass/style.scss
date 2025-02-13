@@ -17,6 +17,7 @@
 ** Components **
 */
 @import "./components/main-btn";
+@import "./components/fields";
 
 /********************
 ** Layout **
@@ -28,6 +29,7 @@
 ** Pages **
 */
 @import "./pages/home/hero";
+@import "./pages/home/registration";
 @import "./pages/home/about";
 @import "./pages/home/info";
 @import "./pages/home/modules";
