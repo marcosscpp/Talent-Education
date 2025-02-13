@@ -56,6 +56,7 @@ export default class Form {
       event.preventDefault();
 
       const formData = new FormData(form);
+
       const param = new URLSearchParams(window.location.search);
       param.forEach((value, key) => {
         formData.set(key, value);
@@ -77,7 +78,7 @@ export default class Form {
         if (result.status === "error") {
         } else {
           this.formElement.reset();
-          const url = `${window.location.href}obrigado`;
+          const url = `${window.location.origin}${window.location.pathname}obrigado`;
           window.open(url, "_blank");
         }
       } catch (error) {

@@ -39,6 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
+    $utm_source = isset($_POST['utm_source']) ? htmlspecialchars($_POST['utm_source']) : 'Desconhecido';
+    $utm_medium = isset($_POST['utm_medium']) ? htmlspecialchars($_POST['utm_medium']) : 'Desconhecido';
+    $utm_campaign = isset($_POST['utm_campaign']) ? htmlspecialchars($_POST['utm_campaign']) : 'Desconhecido';
+    $utm_content = isset($_POST['utm_content']) ? htmlspecialchars($_POST['utm_content']) : 'Desconhecido';
+
+
     if (empty($name) || empty($email) || empty($phone)) {
         sendJsonResponse('error', 'Todos os campos são obrigatórios.');
     }
@@ -70,6 +76,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             [
                                 "field_id" => 542026,
                                 "values" => [["value" => $email]]
+                            ],
+                            [
+                                "field_id" => 1006990,
+                                "values" => [["value" => $utm_content]]
+                            ],
+                            [
+                                "field_id" => 1006988,
+                                "values" => [["value" => $utm_campaign]]
+                            ],
+                            [
+                                "field_id" => 1006986,
+                                "values" => [["value" => $utm_medium]]
+                            ],
+                            [
+                                "field_id" => 1006984,
+                                "values" => [["value" => $utm_source]]
                             ]
                         ]
                     ]

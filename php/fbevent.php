@@ -21,7 +21,7 @@
                 'event_name' => $eventData["eventName"],
                 'event_time' => time(),
                 'action_source' => 'website',
-                'event_source_url' => 'https://kdgeadvogadosassociados.com.br/',
+                'event_source_url' => 'https://lp.talenteducation.com.br/',
                 'user_data' => [
                     'external_id' => $_SERVER['REMOTE_ADDR'],
                     'client_ip_address' => $_SERVER['REMOTE_ADDR'],
