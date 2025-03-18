@@ -1,0 +1,86 @@
+.struggle {
+  &__container {
+    max-width: 86rem;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 1rem 0.125rem;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    background-color: $gray-300;
+    color: $blue-500;
+    flex: 1;
+    padding: 3rem;
+
+    &-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    &-list {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+
+    
+      &::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 1rem;
+        background: url("#{$icon-path}/arrow-right.svg") no-repeat center center /
+          contain;
+      }
+
+      & + & {
+        margin-top: 1rem;
+      }
+    }
+
+    &-description {
+      font-size: 1.125rem;
+      font-weight: 600;
+
+      & + & {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@mixin struggle-md {
+  .struggle {
+    text-align: center;
+    &__card {
+      padding: 2rem;
+      &-item {
+        flex-direction: column;
+        align-items: center;
+      
+
+        & + & {
+          margin-top: 2rem;
+        }
+
+        &-title {
+          margin-bottom: 2rem;
+        }
+
+        &::before {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

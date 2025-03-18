@@ -4,17 +4,13 @@ body {
 }
 
 html {
-  font-size: 162.5%;
+  font-size: 150%;
 
   @include respond-to("ultra") {
-    font-size: 137.5%;
+    font-size: 125%;
   }
 
   @include respond-to("xxxl") {
-    font-size: 112.5%;
-  }
-
-  @include respond-to("xxl") {
     font-size: 100%;
   }
 

@@ -2,17 +2,16 @@
   "name": "talent-education",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sass": "sass --watch ./styles/sass/style.scss:styles/style.css --style compressed",
-    "sass2": "sass --watch ./styles/sass/thank-you.scss:styles/thank-you.css --style compressed",
+    "sass": "node ./dev-utils/sass-watch.js",
     "compress-images": "node compress-images.js",
     "optimize-svgs": "node optimize-svg.js",
     "replace-references": "node replace-references.js",
-    "build:prod": "npm run build && npm run compress-images && npm run optimize-svgs && npm run replace-references"
+    "build:prod": "npm run build && npm run dev-utils/compress-images && npm run dev-utils/optimize-svgs && npm run dev-utils/replace-references"
   },
   "devDependencies": {
     "vite": "^6.0.5"

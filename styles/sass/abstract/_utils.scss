@@ -6,6 +6,10 @@
   }
 }
 
+.rounded {
+  border-radius: 1rem;
+}
+
 .gray-bg {
   background-color: $gray-100;
 }
@@ -40,6 +44,21 @@
   }
 }
 
+.title {
+  text-transform: uppercase;
+  font: {
+    family: $primary-font;
+    size: 2rem;
+    weight: 600;
+  }
+  margin-bottom: 1rem;
+
+  @include respond-to("md") {
+    font-size: 1.5rem;
+    text-wrap: balance;
+    text-align: center;
+  }
+}
 
 .loader {
   width: 2rem;

@@ -60,14 +60,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQ2MmJmN2EyZmM4NGFiZDVkODIwNjUyNjNmY2VkYjlmNzEyZjk0MWExZTI5YjRkNzZjNGY4NzRiYWRlOWZlM2JlNzE0MmM1N2FlMjk4OGVjIn0.eyJhdWQiOiI1Zjk0MTUzYi05M2EwLTQ0YTUtYWI5Zi00YzhhMWQ0NGI4MDIiLCJqdGkiOiI0NjJiZjdhMmZjODRhYmQ1ZDgyMDY1MjYzZmNlZGI5ZjcxMmY5NDFhMWUyOWI0ZDc2YzRmODc0YmFkZTlmZTNiZTcxNDJjNTdhZTI5ODhlYyIsImlhdCI6MTczODI1NjU1OCwibmJmIjoxNzM4MjU2NTU4LCJleHAiOjE4OTU5NjE2MDAsInN1YiI6IjEyNjExMjU5IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjM0MDgxNzA3LCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiZWEzMTdkOWYtYTc3Ni00ZDgzLWFmMDgtZmMyNGZkODgwNzc1IiwiYXBpX2RvbWFpbiI6ImFwaS1jLmtvbW1vLmNvbSJ9.X3bkxJ85r_H_tw6-Q_5IK44Alsr33bJ0-80babiFRhvjBFDu1YVEes7GNwajGidWNOY8DJwQVyZH0OXNVFfP3uf9qkrCn8HudEIPb8T6_sI3TjglR8bCa4bAx9TZbBVfZ8R0Amjs9mD2naElz2na1h2jbcc4JCG2zuTOCzU7PozDp9jfjb8cvUVlzza8blc7Fb6eoT_tqkrH0kZO0NUNShrE43cSdFb1jk4URBJ98kzZsxuSSxLdX0vUo3CUf1WrDN2JGy1Cz_4RpBQjxAuABo_mbK1FfHas_3KPUP_ped-uZXoufBRLAReKuY22EHh1cA7IOMV2sfqDOknhWFTXoQ"
     ];
 
+    $nameParts = explode(' ', $name);
+    $lastName = array_pop($nameParts);
+    $firstName = implode(' ', $nameParts);
+
+
     $data = [
         [
             "_embedded" => [
                 "contacts" => [
                     [
                         "name" => $name,
-                        "first_name" => explode(' ', $name)[0],
-                        "last_name" => explode(' ', $name)[1] ?? '',
+                        "first_name" => $firstName,
+                        "last_name" => $lastName,
                         "custom_fields_values" => [
                             [
                                 "field_id" => 542024,

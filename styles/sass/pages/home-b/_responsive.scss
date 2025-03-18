@@ -1,0 +1,8 @@
+@include respond-to("xl") {
+  @include hero-xl;
+}
+
+@include respond-to("md") {
+  @include struggle-md;
+}
+

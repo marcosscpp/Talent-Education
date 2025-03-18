@@ -108,15 +108,13 @@
   }
 
   &__info {
-    align-items: flex-end;
     background-color: $white;
     color: $blue-500;
     clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0 100%);
-    display: flex;
-    flex-wrap: wrap;
     height: 100%;
-    justify-content: center;
     vertical-align: bottom;
+    line-height: 1.5;
+    min-width: 50%;
     font-weight: 600;
 
     padding: 1rem 3rem;

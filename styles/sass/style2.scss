@@ -17,25 +17,18 @@
 ** Components **
 */
 @import "./components/main-btn";
-@import "./components/fields";
 
 /********************
 ** Layout **
 */
 @import "./layout/container";
-@import "./layout/modal";
 @import "./layout/footer";
+@import "./layout/modal";
 
 /********************
 ** Pages **
 */
-@import "./pages/home/hero";
-@import "./pages/home/registration";
-@import "./pages/home/about";
-@import "./pages/home/info";
-@import "./pages/home/modules";
-@import "./pages/home/bonus";
-@import "./pages/home/audience";
-@import "./pages/home/final-call";
-@import "./pages/home/faq";
-@import "./pages/home/responsive";
+@import "./pages/home-b/hero";
+@import "./pages/home-b/struggle";
+@import "./pages/home-b/responsive";
+
